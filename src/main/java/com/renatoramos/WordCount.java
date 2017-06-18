@@ -26,7 +26,10 @@ class WordCount {
 
         SparkConf conf = new SparkConf()
                 .setAppName(WordCount.class.getName())
+                .set("spark.driver.memory","4G")
+                .set("spark.executor.memory","4G")
                 .setMaster(masterUrl);
+
 
         JavaSparkContext context = new JavaSparkContext(conf);
 
